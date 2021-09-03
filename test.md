@@ -1,10 +1,20 @@
 ---
-layout: page
+layout: default
 title: Test
 permalink: /test/
 ---
 
-{% for post in site.categories.test %}
- <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
- {% include post_preview.html %}
-{% endfor %}
+<div class="posts">
+  {% for post in site.categories.test %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
