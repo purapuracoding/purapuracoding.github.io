@@ -3,10 +3,7 @@ layout: page
 title: Test
 permalink: /test/
 ---
-<div class="blog list">
-    <h1>Filed Under <small># Test</small></h1>
 
-    {% for post in site.categories.test %}
-        {% include post_preview.html %}
-    {% endfor %}
-</div>
+{% for post in site.categories.test %}
+ <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
